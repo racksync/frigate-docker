@@ -1,0 +1,1 @@
+# Run Frigate THE HARD WAY with Container Technology

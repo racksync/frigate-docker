@@ -1,6 +1,6 @@
 # 🎥 Frigate Docker Setup
 
-This repository contains a Docker Compose configuration for running Frigate NVR with RackSync method.
+This repository contains a Docker Compose configuration for running Frigate NVR
 
 ## ⚡ Prerequisites
 

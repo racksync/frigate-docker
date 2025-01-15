@@ -24,8 +24,17 @@ touch config/config.yml
 
 3. Configure environment variables:
 ```bash
+# Core settings
 FRIGATE_RTSP_PASSWORD=your_password
-SET_TZ=Your/Timezone
+SET_TZ=Asia/Bangkok
+
+# MQTT Settings (optional)
+MQTT_HOST=mosquitto
+MQTT_USER=your_mqtt_user
+MQTT_PASSWORD=your_mqtt_password
+
+# Debug Options
+DEBUG_LOGS=false
 ```
 
 4. Start the container:
@@ -52,6 +61,8 @@ The docker-compose.yml includes:
 - 🌐 External network configuration
 - 📡 RTSP and WebRTC ports exposed
 - 💿 Persistent storage for recordings
+- 🏥 Container health monitoring
+- 📊 Resource limits (4GB max, 1GB reserved)
 
 ## 🔌 Ports
 

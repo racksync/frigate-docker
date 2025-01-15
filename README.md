@@ -12,7 +12,7 @@ This repository contains a Docker Compose configuration for running Frigate NVR
 
 1. Clone this repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/racksync/frigate-docker
 cd frigate-docker
 ```
 

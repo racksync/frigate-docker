@@ -1,7 +1,9 @@
+version: "3.9"
 # RUN FRIGATE THE HARD WAY WITH RACKSYNC METHOD
 services:
   frigate:
     container_name: frigate
+    hostname: frigate
     privileged: true # this may not be necessary for all setups
     restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:stable
@@ -17,7 +19,7 @@ services:
       - type: tmpfs 
         target: /tmp/cache
         tmpfs:
-          size: 2000000000  # Optional: 1GB of memory, reduces SSD/SD Card wear
+          size: 2000000000  # 2GB of memory, reduces SSD/SD Card wear
     ports:
       - "5000:5000"
       - "8554:8554" # RTSP feeds
@@ -26,8 +28,45 @@ services:
     networks:
       - backend
     environment:
-      FRIGATE_RTSP_PASSWORD: $FRIGATE_RTSP_PASSWORD
+      # Core settings
       TZ: $SET_TZ
+      FRIGATE_RTSP_PASSWORD: $FRIGATE_RTSP_PASSWORD
+      
+      # MQTT Configuration
+      FRIGATE_MQTT_HOST: ${MQTT_HOST:-mosquitto}
+      FRIGATE_MQTT_USER: ${MQTT_USER:-}
+      FRIGATE_MQTT_PASSWORD: ${MQTT_PASSWORD:-}
+      
+      # Debug options
+      FRIGATE_DEBUG_LOGS: ${DEBUG_LOGS:-false}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/version"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+    labels:
+      - "com.racksync.description=Frigate NVR Instance"
+      - "com.racksync.service=surveillance"
+      - "com.racksync.maintainer=devops@racksync.com"
+    security_opt:
+      - no-new-privileges:true
+    # Optional: If you want to use NVIDIA GPU
+    #runtime: nvidia
+    #environment:
+    #  - NVIDIA_VISIBLE_DEVICES=all
+    #  - NVIDIA_DRIVER_CAPABILITIES=compute,utility,video
 
 networks:
   backend:

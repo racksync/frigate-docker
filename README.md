@@ -93,12 +93,11 @@ Uses external 'backend' network for container communication.
 
 ## 🏢 [RACKSYNC CO., LTD.](https://racksync.com)
 
-บจก.แรคซิงค์ คือผู้เชี่ยวชาญด้าน Automation และ Smart Solutions ทุกขนาด เรามีบริการให้คำปรึกษาตลอดจนวางระบบ ติดตั้งและมอนิเตอร์โดยผู้เชี่ยวชาญ นอกจากนี้เรายังเป็นบริษัทรับพัฒนา Software As A Service แบบครบวงจรอีกด้วย
-\
-\
-📍 RACKSYNC COMPANY LIMITED \
-🌏 Suratthani, Thailand 84000 \
-📧 Email : devops@racksync.com \
+RACKSYNC Co., Ltd. specializes in automation and smart solutions of all scales. We are experts in designing, implementing, and monitoring sophisticated automation systems. Our team of specialists provides comprehensive consulting services and technical implementation for both residential and commercial projects. Beyond automation, we offer full-cycle Software as a Service (SaaS) development, helping businesses transform their operations through custom digital solutions. With our deep expertise in IoT, home automation, and enterprise systems, we deliver reliable and innovative solutions tailored to each client's unique requirements.
+
+📍 RACKSYNC COMPANY LIMITED
+🌏 Suratthani, Thailand 84000
+📧 Email : devops@racksync.com
 📞 Tel : +66 85 880 8885 
 
 [![Home Automation Thailand Discord](https://img.shields.io/discord/986181205504438345?style=for-the-badge)](https://discord.gg/Wc5CwnWkp4) [![Github](https://img.shields.io/github/followers/racksync?style=for-the-badge)](https://github.com/racksync) 
